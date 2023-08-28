@@ -27,9 +27,6 @@
     font-size: 16px;
     color: #ff9900;
   }
-  &__logo {
-    margin-right: 15%;
-  }
   &__btn-wrap {
     display: flex;
     flex-direction: row-reverse;
@@ -81,7 +78,7 @@
     padding: 2.5% 9%;
   }
   &__img {
-    margin-right: 2%;
+    max-width: 98%;
     @media screen and (max-width: 900px) {
       height: auto;
       max-width: 90%;
@@ -139,6 +136,7 @@
 }
 @media screen and (max-width: 740px) {
   .design-tools__boxes-wrap {
+    display: grid;
     justify-items: center;
     grid-template-columns: auto;
     justify-content: center;
@@ -189,9 +187,9 @@
     font-weight: bold;
     font-size: 16px;
   }
-  &__man-red-shirt {
-  }
+  &__man-red-shirt,
   &__man-yellow-shirt {
+    max-width: 98%;
   }
   &__man-blue-shirt {
     order: 1;

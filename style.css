@@ -45,7 +45,7 @@ body {
 }
 
 .input {
-  border-color: 1px solid #BCD0E5;
+  border-color: 1px solid #bcd0e5;
   border-radius: 5%;
   padding: 4% 12%;
   text-align: start;
@@ -126,9 +126,6 @@ body {
   font-size: 16px;
   color: #ff9900;
 }
-.header__logo {
-  margin-right: 15%;
-}
 .header__btn-wrap {
   display: flex;
   flex-direction: row-reverse;
@@ -180,7 +177,7 @@ body {
   padding: 2.5% 9%;
 }
 .design-thinking__img {
-  margin-right: 2%;
+  max-width: 98%;
 }
 @media screen and (max-width: 900px) {
   .design-thinking__img {
@@ -236,6 +233,7 @@ body {
 
 @media screen and (max-width: 740px) {
   .design-tools__boxes-wrap {
+    display: grid;
     justify-items: center;
     grid-template-columns: auto;
     justify-content: center;
@@ -282,6 +280,9 @@ body {
 .design__paragraph-bold {
   font-weight: bold;
   font-size: 16px;
+}
+.design__man-red-shirt, .design__man-yellow-shirt {
+  max-width: 98%;
 }
 .design__man-blue-shirt {
   order: 1;
