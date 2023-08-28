@@ -27,7 +27,6 @@ btnLinks.forEach((btn) => {
   });
 });
 
-
 // input tel-num validation
 
 const telInput = document.getElementById("tel");
@@ -46,16 +45,6 @@ telInput.addEventListener("input", () => {
     signUpButton.disabled = false;
     signUpButton.classList.add("valid-button");
   }
-});
-
-telInput.addEventListener("focus", () => {
-  if (!telInput.value.match(phonePattern)) {
-    errorMessage.textContent = "Please enter a valid 10-digit phone number";
-  }
-});
-
-telInput.addEventListener("blur", () => {
-  errorMessage.textContent = "";
 });
 
 document.addEventListener("click", (event) => {

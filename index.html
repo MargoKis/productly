@@ -20,24 +20,24 @@
     />
   </head>
   <body>
-    <header class="header">
-      <img class="header__logo" src="./assets/svg/Logo.svg" alt="logo" />
-      <nav class="header__navbar" id="navbar">
-        <a href="#product">Product</a>
-        <a href="#customers">Customers</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#resources">Resources</a>
-      </nav>
-      <div class="header__btn-wrap">
-        <button class="btn-head header__sign-in">Sign In</button>
-        <button class="btn-head header__sign-up">Sign Up</button>
-      </div>
-      <div class="burger-icon">
-        <i class="fas fa-bars"></i>
-      </div>
-    </header>
-
     <div class="container">
+      <header class="header">
+        <img class="header__logo" src="./assets/svg/Logo.svg" alt="logo" />
+        <nav class="header__navbar" id="navbar">
+          <a href="#product">Product</a>
+          <a href="#customers">Customers</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#resources">Resources</a>
+        </nav>
+        <div class="header__btn-wrap">
+          <button class="btn-head header__sign-up">Sign Up</button>
+          <button class="btn-head header__sign-in">Sign In</button>
+        </div>
+        <div class="burger-icon">
+          <i class="fas fa-bars"></i>
+        </div>
+      </header>
+
       <div class="design-thinking" id="product">
         <div class="design-thinking__superpowers">
           <h1 class="design-thinking__header">
@@ -131,14 +131,18 @@
               </li>
             </ul>
           </div>
-          <img src="./assets/svg/man-red-shirt.svg" alt="man-in-red-shirt" />
+          <img
+            class="design__man-red-shirt"
+            src="./assets/svg/man-red-shirt.svg"
+            alt="man-in-red-shirt"
+          />
         </div>
       </div>
 
       <div class="design design-wrapper">
         <div class="design__professionals">
           <img
-            class="design__img-blue-shirt"
+            class="design__man-blue-shirt"
             src="./assets/svg/man-blue-shirt.svg"
             alt="man-blue-shirt"
           />
@@ -200,6 +204,7 @@
             </ul>
           </div>
           <img
+            class="design__man-yellow-shirt"
             src="./assets/svg/man-yellow-shirt.svg"
             alt="man-in-yellow-shirt"
           />
