@@ -61,8 +61,8 @@ signUpButton.addEventListener("click", () => {
     errorMessage.textContent = "";
     Swal.fire({
       icon: "success",
-      title: "Success!",
-      text: "Thank you for signing up.",
+      title: "Thank you!",
+      text: "Our manager will contact you within 20 minutes.",
       confirmButtonColor: "#007bff",
     }).then(() => {
       telInput.value = "";
@@ -71,3 +71,36 @@ signUpButton.addEventListener("click", () => {
     });
   }
 });
+
+
+// sign up popup
+function togglePopupSignUp() {
+  const popupSignUp = document.getElementById("popupSignUp");
+  popupSignUp.style.display =
+  popupSignUp.style.display === "flex" ? "none" : "flex";
+}
+
+function closePopupSignUp() {
+  document.getElementById("popupSignUp").style.display = "none";
+}
+
+document
+  .getElementById("signupForm")
+  .addEventListener("submit", function (event) {});
+
+
+// log in popup
+function togglePopupLogIn() {
+  const popupLogIn = document.getElementById("popupLogIn");
+  popupLogIn.style.display =
+  popupLogIn.style.display === "flex" ? "none" : "flex";
+}
+
+function closePopupLogIn() {
+  document.getElementById("popupLogIn").style.display = "none";
+}
+
+document
+  .getElementById("signupForm")
+  .addEventListener("submit", function (event) {});
+  

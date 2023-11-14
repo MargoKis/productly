@@ -20,6 +20,61 @@
     />
   </head>
   <body>
+    <!-- Sign Up -->
+    <div class="overlay" id="popupSignUp" onclick="closePopupSignUp()">
+      <div class="popup" onclick="event.stopPropagation();">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <div class="error" id="nameError">Name can't be blank</div>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <div class="error" id="emailError">Invalid email address</div>
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+          <div class="error" id="passwordError">
+            Password must be at least 6 characters
+          </div>
+
+          <label for="confirmPassword">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            required
+          />
+          <div class="error" id="confirmPasswordError">
+            Passwords do not match
+          </div>
+
+          <button class="btn-popup" type="submit" value="Sign Up">Sign Up</button>
+        </form>
+      </div>
+    </div>
+    <!-- Log In -->
+    <div class="overlay" id="popupLogIn" onclick="closePopupLogIn()">
+      <div class="popup" onclick="event.stopPropagation();">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <div class="error" id="emailError">Invalid email address</div>
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+          <div class="error" id="passwordError">
+            Password must be at least 6 characters
+          </div>
+
+          <button class="btn-popup" type="submit" value="Log In">Log In</button>
+        </form>
+      </div>
+    </div>
+    <!---->
+
     <div class="container">
       <header class="header">
         <img class="header__logo" src="./assets/svg/Logo.svg" alt="logo" />
@@ -30,8 +85,15 @@
           <a href="#resources">Resources</a>
         </nav>
         <div class="header__btn-wrap">
-          <button class="btn-head header__sign-up">Sign Up</button>
-          <button class="btn-head header__sign-in">Sign In</button>
+          <button
+            class="btn-head header__sign-up"
+            onclick="togglePopupSignUp()"
+          >
+            Sign Up
+          </button>
+          <button class="btn-head header__sign-in" onclick="togglePopupLogIn()">
+            Log In
+          </button>
         </div>
         <div class="burger-icon">
           <i class="fas fa-bars"></i>
@@ -47,7 +109,9 @@
             Tools, tutorials, design and innovation experts, all in one place!
             The most intuitive way to imagine your next user experience.
           </p>
-          <button class="btn-main design-thinking__started">Get started</button>
+          <a href="#pricing" class="btn-main design-thinking__started"
+            >Get Started</a
+          >
         </div>
         <img
           class="design-thinking__img"
@@ -66,7 +130,7 @@
             <ul class="design-tools__list">
               <li class="design-tools__heading">First click tests</li>
               <li class="design-tools__paragraph">
-                While most people enjoy casino gambling,
+                While most people enjoy casino gambling
               </li>
             </ul>
           </div>
@@ -99,7 +163,9 @@
           </div>
         </div>
         <div class="design-tools__sign-container">
-          <button class="btn-main design-tools__sign">Sign up Now</button>
+          <button class="btn-main design-tools__sign" onclick="togglePopup()">
+            Sign up Now
+          </button>
         </div>
       </div>
 
@@ -215,12 +281,27 @@
 
       <footer class="footer" id="resources">
         <img src="./assets/svg/Logo.svg" alt="logo" />
-        <nav class="footer__navbar">
+        <!-- <nav class="footer__navbar">
           <p class="footer__paragraph-bold">Quick Links</p>
           <a class="footer__paragraph" href="#about-us">About Us</a>
           <a class="footer__paragraph" href="#blog">Blog</a>
           <a class="footer__paragraph" href="#contact">Contact</a>
           <a class="footer__paragraph" href="#FAQ">FAQ</a>
+        </nav> -->
+        <nav class="footer__icons">
+          <p class="footer__paragraph-bold">Quick Links</p>
+          <a class="footer__icon-border">
+            <i class="fa-brands fa-instagram circle"></i>
+          </a>
+          <a class="footer__icon-border">
+            <i class="fa-brands fa-facebook-f circle"></i>
+          </a>
+          <a class="footer__icon-border">
+            <i class="fa-brands fa-twitter circle"></i>
+          </a>
+          <a class="footer__icon-border">
+            <i class="fa-brands fa-linkedin-in circle"></i>
+          </a>
         </nav>
         <nav class="footer__navbar">
           <p class="footer__paragraph-bold">Legal Stuff</p>
@@ -242,10 +323,10 @@
             id="tel"
             class="input"
             name="tel"
-            placeholder="Enter your phone Number"
+            placeholder="Enter your phone number"
           />
           <div class="error-message" id="error-message"></div>
-          <button class="btn-main footer__sign">Sign up Now</button>
+          <button class="btn-main footer__sign">Call me back</button>
         </div>
       </footer>
     </div>
