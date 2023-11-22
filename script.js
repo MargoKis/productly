@@ -72,12 +72,11 @@ signUpButton.addEventListener("click", () => {
   }
 });
 
-
 // sign up popup
 function togglePopupSignUp() {
   const popupSignUp = document.getElementById("popupSignUp");
   popupSignUp.style.display =
-  popupSignUp.style.display === "flex" ? "none" : "flex";
+    popupSignUp.style.display === "flex" ? "none" : "flex";
 }
 
 function closePopupSignUp() {
@@ -88,12 +87,11 @@ document
   .getElementById("signupForm")
   .addEventListener("submit", function (event) {});
 
-
 // log in popup
 function togglePopupLogIn() {
   const popupLogIn = document.getElementById("popupLogIn");
   popupLogIn.style.display =
-  popupLogIn.style.display === "flex" ? "none" : "flex";
+    popupLogIn.style.display === "flex" ? "none" : "flex";
 }
 
 function closePopupLogIn() {
@@ -103,4 +101,138 @@ function closePopupLogIn() {
 document
   .getElementById("signupForm")
   .addEventListener("submit", function (event) {});
-  
+
+// register validation
+// sign up
+function validateEmail(email) {
+  const re = /\S+@\S+\.\S+/;
+  return re.test(String(email).toLowerCase());
+}
+
+function validateForm(event) {
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+  const confirmPasswordInput = document.getElementById("confirmPassword");
+
+  const nameError = document.getElementById("nameError");
+  const emailError = document.getElementById("emailError");
+  const passwordError = document.getElementById("passwordError");
+  const confirmPasswordError = document.getElementById("confirmPasswordError");
+
+  const nameValue = nameInput.value.trim();
+  const emailValue = emailInput.value.trim();
+  const passwordValue = passwordInput.value.trim();
+  const confirmPasswordValue = confirmPasswordInput.value.trim();
+
+  let isValid = true;
+
+  if (/\d/.test(nameValue)) {
+    nameError.textContent = "Name should not contain digits";
+    nameError.style.display = "block";
+    isValid = false;
+  } else if (nameValue.length < 3 || nameValue.length > 16) {
+    nameError.textContent = "Name should be between 3 and 16 characters";
+    nameError.style.display = "block";
+    isValid = false;
+  } else {
+    nameError.style.display = "none";
+  }
+
+  if (!validateEmail(emailValue)) {
+    emailError.style.display = "block";
+    isValid = false;
+  } else {
+    emailError.style.display = "none";
+  }
+
+  if (passwordValue.length < 6) {
+    passwordError.style.display = "block";
+    isValid = false;
+  } else {
+    passwordError.style.display = "none";
+  }
+
+  if (passwordValue !== confirmPasswordValue) {
+    confirmPasswordError.style.display = "block";
+    isValid = false;
+  } else {
+    confirmPasswordError.style.display = "none";
+  }
+
+  return isValid;
+}
+
+document
+  .querySelector(".btn-popup")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    const isValid = validateForm();
+
+    if (isValid) {
+      // Закрити поп-ап
+      document.getElementById("popupSignUp").style.display = "none";
+      alert("You have successfully signed up!");
+    }
+  });
+
+document.getElementById("name").addEventListener("input", validateForm);
+document.getElementById("email").addEventListener("input", validateForm);
+document.getElementById("password").addEventListener("input", validateForm);
+document
+  .getElementById("confirmPassword")
+  .addEventListener("input", validateForm);
+document.getElementById("signupForm").addEventListener("submit", validateForm);
+
+// log in
+function validateLoginForm(event) {
+  const emailInput = document.getElementById("emailLogin");
+  const passwordInput = document.getElementById("passwordLogin");
+
+  const emailError = document.getElementById("emailErrorLogin");
+  const passwordError = document.getElementById("passwordErrorLogin");
+
+  const emailValue = emailInput.value.trim();
+  const passwordValue = passwordInput.value.trim();
+
+  let isValid = true;
+
+  if (!validateEmail(emailValue)) {
+    emailError.style.display = "block";
+    isValid = false;
+  } else {
+    emailError.style.display = "none";
+  }
+
+  if (passwordValue.length < 6) {
+    passwordError.style.display = "block";
+    isValid = false;
+  } else {
+    passwordError.style.display = "none";
+  }
+
+  return isValid;
+}
+
+document
+  .querySelector(".btn-popup-login")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    const isValid = validateLoginForm();
+
+    if (isValid) {
+      // Закрити поп-ап логіну
+      document.getElementById("popupLogIn").style.display = "none";
+      alert("You have successfully logged in!");
+    }
+  });
+
+document
+  .getElementById("emailLogin")
+  .addEventListener("input", validateLoginForm);
+document
+  .getElementById("passwordLogin")
+  .addEventListener("input", validateLoginForm);
+document
+  .getElementById("loginForm")
+  .addEventListener("submit", validateLoginForm);
