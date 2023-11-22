@@ -50,29 +50,39 @@
             Passwords do not match
           </div>
 
-          <button class="btn-popup" type="submit" value="Sign Up">Sign Up</button>
+          <button class="btn-popup" type="submit" value="Sign Up">
+            Sign Up
+          </button>
         </form>
       </div>
     </div>
     <!-- Log In -->
     <div class="overlay" id="popupLogIn" onclick="closePopupLogIn()">
       <div class="popup" onclick="event.stopPropagation();">
-        <h2>Sign Up</h2>
-        <form id="signupForm">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-          <div class="error" id="emailError">Invalid email address</div>
+        <h2>Log In</h2>
+        <form id="loginForm">
+          <label for="emailLogin">Email:</label>
+          <input type="email" id="emailLogin" name="emailLogin" required />
+          <div class="error" id="emailErrorLogin">Invalid email address</div>
 
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required />
-          <div class="error" id="passwordError">
+          <label for="passwordLogin">Password:</label>
+          <input
+            type="password"
+            id="passwordLogin"
+            name="passwordLogin"
+            required
+          />
+          <div class="error" id="passwordErrorLogin">
             Password must be at least 6 characters
           </div>
 
-          <button class="btn-popup" type="submit" value="Log In">Log In</button>
+          <button class="btn-popup-login" type="submit" value="Log In">
+            Log In
+          </button>
         </form>
       </div>
     </div>
+
     <!---->
 
     <div class="container">
@@ -91,7 +101,7 @@
           >
             Sign Up
           </button>
-          <button class="btn-head header__sign-in" onclick="togglePopupLogIn()">
+          <button class="btn-head header__sign-up" onclick="togglePopupLogIn()">
             Log In
           </button>
         </div>
@@ -163,7 +173,10 @@
           </div>
         </div>
         <div class="design-tools__sign-container">
-          <button class="btn-main design-tools__sign" onclick="togglePopupSignUp()">
+          <button
+            class="btn-main design-tools__sign"
+            onclick="togglePopupSignUp()"
+          >
             Sign up Now
           </button>
         </div>
@@ -289,43 +302,44 @@
           <a class="footer__paragraph" href="#FAQ">FAQ</a>
         </nav> -->
         <nav class="footer__icons">
-          <p class="footer__paragraph-bold">Quick Links</p>
-          <a class="footer__icon-border">
-            <i class="fa-brands fa-instagram circle"></i>
-          </a>
-          <a class="footer__icon-border">
-            <i class="fa-brands fa-facebook-f circle"></i>
-          </a>
-          <a class="footer__icon-border">
-            <i class="fa-brands fa-twitter circle"></i>
-          </a>
-          <a class="footer__icon-border">
-            <i class="fa-brands fa-linkedin-in circle"></i>
-          </a>
-        </nav>
-        <nav class="footer__navbar">
-          <p class="footer__paragraph-bold">Legal Stuff</p>
-          <a class="footer__paragraph" href="#disclaimer">Disclaimer</a>
-          <a class="footer__paragraph" href="#financing">Financing</a>
-          <a class="footer__paragraph" href="#privacy-policy">Privacy Policy</a>
-          <a class="footer__paragraph" href="#terms-of-service"
-            >Terms of Service</a
-          >
+          <p class="footer__paragraph-bold footer__title">Media Links</p>
+          <div class="footer__links-wrap">
+            <a
+              href="https://www.instagram.com/?lang=uk"
+              class="footer__icon-border"
+            >
+              <i class="fa-brands fa-instagram circle"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/?lang=uk"
+              class="footer__icon-border"
+            >
+              <i class="fa-brands fa-facebook-f circle"></i>
+            </a>
+            <a href="https://twitter.com/?lang=uk" class="footer__icon-border">
+              <i class="fa-brands fa-twitter circle"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/?lang=uk"
+              class="footer__icon-border"
+            >
+              <i class="fa-brands fa-linkedin-in circle"></i>
+            </a>
+          </div>
         </nav>
         <div class="footer__num-wrap">
-          <p class="footer__paragraph-bold">
-            Knowing you're always on <br />
-            the best energy deal.
-          </p>
-          <label for="tel"></label>
-          <input
-            type="tel"
-            id="tel"
-            class="input"
-            name="tel"
-            placeholder="Enter your phone number"
-          />
-          <div class="error-message" id="error-message"></div>
+          <div class="footer__input-wrap">
+            <p class="footer__paragraph-bold">Contact us</p>
+            <label for="tel"></label>
+            <input
+              type="tel"
+              id="tel"
+              class="input"
+              name="tel"
+              placeholder="Type phone number"
+            />
+            <div class="error-message" id="error-message"></div>
+          </div>
           <button class="btn-main footer__sign">Call me back</button>
         </div>
       </footer>
