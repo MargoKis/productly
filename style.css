@@ -131,14 +131,14 @@ body {
   flex-direction: row-reverse;
   gap: 25px;
 }
-.header__sign-in {
-  color: #2f281e;
-  background-color: transparent;
-  border-color: #bcd0e5;
-}
 .header__sign-up {
   color: white;
   background-color: #ff9900;
+  border-color: #ff9900;
+}
+.header__sign-up:hover {
+  color: #ff9900;
+  background-color: white;
   border-color: #ff9900;
 }
 
@@ -175,6 +175,11 @@ body {
 }
 .design-thinking__started {
   padding: 2.5% 9%;
+}
+.design-thinking__started:hover {
+  color: #ff9900;
+  background-color: white;
+  border-color: #ff9900;
 }
 .design-thinking__img {
   max-width: 98%;
@@ -229,6 +234,11 @@ body {
 }
 .design-tools__sign {
   padding: 1% 4%;
+}
+.design-tools__sign:hover {
+  color: #ff9900;
+  background-color: white;
+  border-color: #ff9900;
 }
 
 @media screen and (max-width: 960px) {

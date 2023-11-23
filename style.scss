@@ -32,16 +32,22 @@
     flex-direction: row-reverse;
     gap: 25px;
   }
-  &__sign-in {
-    color: #2f281e;
-    background-color: transparent;
-    border-color: #bcd0e5;
-  }
+  // &__sign-in {
+  //   color: #2f281e;
+  //   background-color: transparent;
+  //   border-color: #bcd0e5;
+  // }
   &__sign-up {
     color: white;
     background-color: #ff9900;
     border-color: #ff9900;
   }
+  &__sign-up:hover {
+    color: #ff9900;
+    background-color: white;
+    border-color: #ff9900;
+  }
+
 }
 
 .design-thinking {
@@ -76,6 +82,11 @@
   }
   &__started {
     padding: 2.5% 9%;
+  }
+  &__started:hover {
+    color: #ff9900;
+    background-color: white;
+    border-color: #ff9900;
   }
   &__img {
     max-width: 98%;
@@ -132,6 +143,11 @@
   }
   &__sign {
     padding: 1% 4%;
+  }
+  &__sign:hover {
+    color: #ff9900;
+    background-color: white;
+    border-color: #ff9900;
   }
 }
 
@@ -282,6 +298,7 @@ hr {
     padding: 2% 6%;
     max-width: 70%;
   }
+
 }
 
 // burger-menu
